@@ -127,15 +127,23 @@ Skills live under `.claude/skills/` and are slash commands invoked in Claude Cod
 
 ## Git
 
-After completing any task that modifies files — including skill runs (`/trello-sync`,
-`/trello-add`, `/notion-sync`, `/digest`, `/task-write`) and direct edits to skills or config — do
-the following automatically, without waiting to be asked:
-
+### Operational changes (trello-sync, trello-add, trello-update, notion-sync, digest, task-write)
+These only modify gitignored local files. After each run:
 1. Stage only the files that were changed.
-2. Commit with a concise message describing what was done.
-3. Push to `origin/main` immediately after committing.
+2. Commit with a concise message.
+3. Do NOT push — local commits only.
 
-Work directly on `main` — no feature branches needed for this repo.
+### Structural changes (skill improvements, new skills, config updates)
+These modify tracked files visible on GitHub. Use a branch and PR:
+1. Create a branch: `git checkout -b <type>/<short-description>`
+   - `skill/` — improving an existing skill
+   - `feat/` — new skill or feature
+   - `fix/` — correcting broken behaviour
+   - `chore/` — config or structural updates
+2. Commit changes with a concise message.
+3. Push the branch and open a PR: `gh pr create --fill`
+4. Review the PR safety checklist before merging.
+5. Merge and delete the branch.
 
 ## MCP
 
@@ -150,5 +158,10 @@ After completing any skill run, evaluate whether the skill instructions were com
 - If you had to improvise, work around unclear instructions, or the result was suboptimal in any way — propose a minimal, targeted update to the relevant `SKILL.md` file.
 - Show the proposed change as a diff (before/after the specific lines).
 - Ask for approval with `AskUserQuestion` (options: "Apply it" / "Skip").
-- If approved: update the skill file, commit with `improve: [skill-name] — [one-line description]`, push, then run `/template-sync` to keep `AGENTS.example.md` in sync.
+- If approved:
+  1. Create a branch: `git checkout -b skill/[skill-name]-[brief-description]`
+  2. Update the skill file.
+  3. Commit: `improve: [skill-name] — [one-line description]`
+  4. Open a PR: `gh pr create --fill`
+  5. After PR is merged: run `/template-sync` to keep `AGENTS.example.md` in sync.
 - Keep changes minimal — fix only what caused the issue, don't refactor.

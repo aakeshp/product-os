@@ -56,18 +56,19 @@ Stop here. Do not commit until the user has manually removed the sensitive conte
 
 If no matches found, proceed.
 
-## Step 5: Update AGENTS.example.md and commit
+## Step 5: Update AGENTS.example.md and open a PR
 
 Write the sanitised output to `AGENTS.example.md`.
 
 ```bash
+git checkout -b chore/template-sync-$(date +%Y-%m-%d)
 git add AGENTS.example.md
 git commit -m "sync: update AGENTS.example.md"
-git push origin main
+gh pr create --fill
 ```
 
 Report:
 ```
-AGENTS.example.md updated and pushed.
+AGENTS.example.md updated. PR opened for review.
 Changes: [brief summary of what changed — e.g. "added ## Self-improvement section, 2 new list IDs sanitised"]
 ```

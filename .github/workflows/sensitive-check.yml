@@ -1,0 +1,62 @@
+name: Sensitive content check
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  sensitive-check:
+    runs-on: ubuntu-latest
+    name: Scan for sensitive content
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Get changed files
+        id: changed
+        run: |
+          git diff origin/main...HEAD --name-only > changed_files.txt
+          cat changed_files.txt
+
+      - name: Scan for sensitive patterns
+        run: |
+          FAILED=0
+
+          while IFS= read -r file; do
+            # Skip if file doesn't exist (deleted)
+            [ -f "$file" ] || continue
+
+            # Trello-style 24-char hex IDs
+            if grep -Pn '[0-9a-f]{24}' "$file"; then
+              echo "::error file=$file::Possible Trello ID (24-char hex) found"
+              FAILED=1
+            fi
+
+            # Notion UUIDs
+            if grep -Pn '[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}' "$file"; then
+              echo "::error file=$file::Possible Notion UUID found"
+              FAILED=1
+            fi
+
+            # Email addresses
+            if grep -Pn '[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}' "$file"; then
+              echo "::error file=$file::Email address found"
+              FAILED=1
+            fi
+
+            # Org domain
+            if grep -n 'thenational\.academy' "$file"; then
+              echo "::error file=$file::Org domain found"
+              FAILED=1
+            fi
+
+          done < changed_files.txt
+
+          if [ $FAILED -ne 0 ]; then
+            echo ""
+            echo "Sensitive content detected in changed files. Remove before merging."
+            exit 1
+          fi
+
+          echo "No sensitive content found."
