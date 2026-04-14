@@ -1,0 +1,25 @@
+# Obsidian
+.obsidian/
+
+# Old git history backup (local only)
+.git-backup/
+
+# Personal task data (stays local)
+Tasks/candidates/candidates.md
+Tasks/in-progress/in-progress.md
+Tasks/radar/radar.md
+Tasks/done/done.md
+Tasks/tasks-this-week/
+Tasks/goals/goals.md
+
+# Org-specific work (stays local)
+Oak/
+
+# Research (stays local)
+Research/
+
+# Agent config with real IDs (stays local)
+AGENTS.md
+
+# Local Claude config
+.claude/settings.local.json
