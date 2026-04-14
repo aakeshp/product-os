@@ -86,7 +86,7 @@ If a component or symbol name is known (from Notion or user input) and a repo is
   - `[category]` = the category label, lowercased, spaces to hyphens
   - `[slug]` = title lowercased, spaces to hyphens, special chars stripped
   - The subdirectory is created automatically if it doesn't exist
-- Use the template structure from `Product Management/AI Task Writer/_template.md`
+- Use the template structure from `Product Management/AI Task Writer/task-template.md`
 - Fill in all provided fields
 - Leave placeholder text (from the template) for anything not provided
 - Set `status: ready` if all required fields are filled; otherwise `status: draft`

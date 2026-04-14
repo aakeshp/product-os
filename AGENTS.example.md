@@ -110,7 +110,7 @@ AI-ready task files give Claude Code enough context to independently fix a bug o
 | Item | Value |
 |---|---|
 | Tasks directory | `[YourOrg]/[YourTeam]/Tasks` |
-| Template | `Product Management/AI Task Writer/_template.md` |
+| Template | `Product Management/AI Task Writer/task-template.md` |
 
 ## Skills
 
