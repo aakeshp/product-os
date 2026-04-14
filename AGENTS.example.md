@@ -142,3 +142,13 @@ Work directly on `main` — no feature branches needed for this repo.
 The Zapier MCP server provides Trello tools. Config is in `.mcp.json`. If tools are unavailable, re-authenticate via `/mcp` in Claude Code.
 
 The Notion MCP server provides Notion tools. Config is in `.mcp.json`. If tools are unavailable, re-authenticate via `/mcp`.
+
+## Self-improvement
+
+After completing any skill run, evaluate whether the skill instructions were complete and accurate:
+
+- If you had to improvise, work around unclear instructions, or the result was suboptimal in any way — propose a minimal, targeted update to the relevant `SKILL.md` file.
+- Show the proposed change as a diff (before/after the specific lines).
+- Ask for approval with `AskUserQuestion` (options: "Apply it" / "Skip").
+- If approved: update the skill file, commit with `improve: [skill-name] — [one-line description]`, push, then run `/template-sync` to keep `AGENTS.example.md` in sync.
+- Keep changes minimal — fix only what caused the issue, don't refactor.
