@@ -5,12 +5,7 @@
 .git-backup/
 
 # Personal task data (stays local)
-Tasks/candidates/candidates.md
-Tasks/in-progress/in-progress.md
-Tasks/radar/radar.md
-Tasks/done/done.md
-Tasks/tasks-this-week/
-Tasks/goals/goals.md
+Tasks/
 
 # Org-specific work (stays local)
 Oak/
