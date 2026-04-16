@@ -16,5 +16,8 @@ Research/
 # Agent config with real IDs (stays local)
 AGENTS.md
 
+# Personal skills (stays local)
+.claude/skills/personal-*/
+
 # Local Claude config
 .claude/settings.local.json
