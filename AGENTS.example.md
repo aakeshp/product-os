@@ -40,7 +40,6 @@ Skills live under `.claude/skills/` and are slash commands invoked in Claude Cod
 | Skill | Command | Description |
 |---|---|---|
 | craft-market-research-digest | `/craft-market-research-digest` | Generate weekly research digest from RSS + web search |
-| craft-notion-sync | `/craft-notion-sync` | Sync from a Notion board into a local markdown file |
 | craft-task-write | `/craft-task-write` | Generate an AI-ready task file with full context for Claude Code |
 
 ## task-write
