@@ -4,21 +4,19 @@
 # Old git history backup (local only)
 .git-backup/
 
-# Personal task data (stays local)
+# Personal data — now lives in personal-os repo (keep gitignored while local copies exist)
 Tasks/
+Research/
+AI Experiment/
 
-# Org-specific work (stays local)
-AI experiment/
+# Org-specific — now lives in oak-knowledge-core repo (keep gitignored while local copies exist)
 Knowledge Core/
 Discovery Engine/
 
-# Research (stays local)
-Research/
-
-# Agent config with real IDs (stays local)
+# Agent config with real IDs (stays local — tracked version is AGENTS.example.md)
 AGENTS.md
 
-# Personal skills (stays local)
+# Personal skills (stays local — personal-os repo)
 .claude/skills/personal-*/
 
 # Local Claude config
