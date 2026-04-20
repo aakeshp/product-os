@@ -7,8 +7,5 @@
 # Agent config with real IDs (tracked version is AGENTS.example.md)
 AGENTS.md
 
-# Personal skills (live in personal-os repo)
-.claude/skills/personal-*/
-
 # Local Claude config
 .claude/settings.local.json
