@@ -4,8 +4,5 @@
 # Old git history backup (local only)
 .git-backup/
 
-# Agent config with real IDs (tracked version is AGENTS.example.md)
-AGENTS.md
-
 # Local Claude config
 .claude/settings.local.json
