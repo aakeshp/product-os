@@ -1,8 +1,5 @@
 # Obsidian
 .obsidian/
 
-# Old git history backup (local only)
-.git-backup/
-
 # Local Claude config
 .claude/settings.local.json
