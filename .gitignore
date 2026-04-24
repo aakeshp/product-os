@@ -3,3 +3,9 @@
 
 # Local Claude config
 .claude/settings.local.json
+
+# Private agent config
+AGENTS.md
+
+# Secrets
+.env
