@@ -21,15 +21,23 @@ A team's planning method can and should vary. The roadmap format should not.
 
 ## Principles
 
-- **Outcomes and intent, not features.** A roadmap item should describe a user problem, an opportunity, a risk to reduce, a constraint to remove, or a strategic theme — not a shipped feature. See the item-quality table below.
+- **Outcomes and intent, not features.** A roadmap item should describe a user problem, an opportunity, a risk to reduce, a constraint to remove, a strategic theme, or a better way of working — not a shipped feature. See the five tests below.
 - **Confidence falls as the horizon extends.** Now should be concrete. Next should read as candidate bets, not commitments. Later should read as direction, not a promise.
 - **Evidence-linked, not opinion-linked.** Every roadmap item should be traceable to Knowledge Core evidence — a belief, a signal, or user research — even if the underlying team-planning method that produced it varies. If an item has no evidence link, that should be visible, not hidden behind confident-sounding language.
 - **Explicitly not doing.** Naming what's deliberately out of scope, and why, reduces repeated relitigating of decisions already made.
 - **Living, not static.** A roadmap set once at the start of a planning period and never revisited is not evidence-guided — it's a snapshot of the day it was written.
 
-## What makes a good roadmap item
+## The five tests of a good item
 
-A good item is clear enough for someone outside the team to understand, while leaving room for the team to decide how to approach it. It should not read like a fixed feature commitment. It should make clear *why the work matters* and *what kind of progress, learning, or change* is being aimed at.
+A strong roadmap item should pass all five:
+
+1. **Expresses intent or an outcome, not a feature or task.** It describes a user problem, an opportunity, a risk to reduce, a constraint to remove, a strategic theme, or a better way of working — not the thing to be built. "Add a sharing feature" is a feature; "Users can share activity with others quickly and reliably" is an outcome.
+2. **Makes clear why the work matters.** A reader should understand what progress, learning, or change the team is aiming for. It should imply value for users and/or the organisation.
+3. **Is understandable to someone outside the team.** Plain language, no unexplained jargon, no internal project codenames standing in for meaning.
+4. **Leaves room for the team to decide how.** It should not read like a fixed feature commitment or a detailed delivery plan. The "how" — sequencing, testing, delivery — sits beneath the roadmap in the team's own planning space.
+5. **Is specific enough to be meaningful.** Vague aspirations like "improve search" or "increase engagement" don't say what better looks like. A good item points at a concrete change in what users can do, or what the organisation can rely on.
+
+Not all work is user-facing. For platform or foundational work, a good item describes **what it enables, what risk it reduces, or how it helps the organisation deliver more value** — e.g. helping other teams move faster, make safer changes, or rely on better data and tools. "Refactor the data pipeline" names a task; "Teams can rely on this data being accurate, structured, and easy to reuse" is the enabling outcome.
 
 | Less useful | Better |
 |---|---|
@@ -40,7 +48,59 @@ A good item is clear enough for someone outside the team to understand, while le
 | Try AI tools | The team can test where AI meaningfully improves quality without reducing trust |
 | Fix tech debt | Reduce the technical constraints slowing down [specific future work] |
 
-Work that isn't user-facing (platform, data, tooling, enabling work) still belongs on the roadmap — it should be clear what it enables, what risk it reduces, or how it helps deliver more value over time.
+What the "Better" column has in common: it states an outcome or capability rather than an action on the product, names who benefits where relevant, hints at the standard of success without prescribing the solution, and stays one clear sentence.
+
+## Item types
+
+A roadmap item is a meaningful area of work or intent — it does not have to be a user-facing feature outcome:
+
+- **User job / problem** — something users are trying to do, or struggling with.
+- **Opportunity** — a chance to improve the product or create value.
+- **Capability** — a new thing the product or organisation can do.
+- **Technical investment** — foundational work; frame by what it enables or what risk it reduces, not the task itself.
+- **Growth initiative** — reach, adoption, retention.
+- **Discovery bet** — something to investigate or test where confidence is still forming; often "Explore…", "Test…", "Understand…", "Investigate…".
+- **Ways-of-working experiment** — a better way for the team to work.
+- **Strategic theme** — longer-term direction the team is moving towards.
+
+All eight still have to pass the five tests. Don't penalise a discovery bet or a ways-of-working item for not being user-facing — judge it on the same five tests as everything else.
+
+**Watch the "why" especially on discovery bets.** Once an item opens with "Explore…" or "Test…" it's easy to nail *what* you'll learn and silently drop *why it matters*. "Understand how users choose between competing options" works; "Do some research" doesn't. A scoped bet still needs the reason stated — in the title or carried in the summary — or it reads as activity for its own sake.
+
+## Title and summary are one job split across two fields
+
+An intent sentence that passes all five tests can still be too long-winded to sit as a roadmap title. When that happens, don't force the whole sentence into the title — split it:
+
+- **Title** — short, names the intent or outcome, readable at a glance.
+- **Summary** — one or two sentences carrying the specificity the title leaves out: what *better* looks like, or what the work brings into line.
+
+This is the same intent statement distributed across two fields, not two different things — the summary is where test 5's specificity lives when the title is kept short.
+
+**Judge title and summary together, not the title alone.** A short title will often read as borderline-vague in isolation — that's fine, as long as the summary pins down what better means. Don't penalise a title for leaning on its summary; that's the split working as intended. If an item is a bare title with no summary, the title alone must carry the specificity.
+
+## How much detail belongs in an item
+
+The roadmap item is the intent-level statement — usually one clear sentence, plus an optional summary. The deep detail (full evidence, delivery breakdown, sequencing, dependencies) lives underneath, in the team's own planning space, and the item can simply **link** to that backlog or planning entry rather than duplicating it. A link stays current; a copy drifts out of date the moment the underlying plan changes.
+
+Against an item, two more things can usefully sit *on the roadmap itself* without turning it into a delivery plan:
+
+- A short **summary** (see above).
+- A **status / "what's happening now" note** — the latest decision or what's in progress, which keeps the roadmap honest between formal reviews.
+
+If someone hands you a backlog link or a pasted task breakdown with no intent sentence at all, that's the signal to help write the missing intent — not to evaluate the link or the task list as if it were the item.
+
+## Register and tone
+
+Word choice matters even on items that will only ever be read inside the organisation. A word can be technically accurate and still land wrong — "cheap" correctly describes low-effort maintenance but reads as off-brand where "easier to maintain" or "lower-effort" fits. Don't treat "it's just internal" as licence for register that doesn't match how the organisation actually talks about its work.
+
+## Common failure modes to flag
+
+- **Feature framing** — "Add / Build / Launch / Ship [thing]": names the solution, not the intent.
+- **Task framing** — "Refactor / Fix / Migrate / Improve [internal thing]": names the activity, not what it enables.
+- **Vagueness** — "Improve / Increase / Optimise [X]" with no sense of what better means.
+- **Jargon or codename** — unreadable to someone outside the team.
+- **Over-specified delivery plan** — reads like a committed spec, leaving no room for the team to decide how.
+- **Missing the "so what"** — no clear user or organisational value; can't answer "why does this matter?"
 
 ## Structure: Now / Next / Later
 
@@ -50,7 +110,14 @@ The horizons are roughly time-bound, but they're mainly about **focus and confid
 - **Next** — Work the team may explore once there's capacity or confidence to move beyond Now. Not a firm commitment — candidate bets, follow-on work, problems to investigate, or opportunities needing more evidence. These items should inform what discovery work is worth doing now.
 - **Later** — Longer-term vision, strategic themes, or direction. Not a prediction of *when* — a signal of what's important but deliberately not being worked on yet.
 
-Items move between lanes as evidence and confidence change — a Next item can drop to Later if the belief behind it weakens; a Later item can jump to Next if a new signal strengthens it.
+Items move between lanes as evidence and confidence change — a Next item can drop to Later if the belief behind it weakens; a Later item can jump to Next if a new signal strengthens it. Deciding which lane an item belongs in is a sequencing judgement — it depends on the team's capacity, confidence, and dependencies, none of which the item's wording alone reveals. Don't infer a placement from text quality; a well-written item can belong in any lane.
+
+**A register tell helps with writing (not deciding) the right horizon:**
+- A **Now** item names a concrete change underway.
+- A **Next** item usually opens as a bet or question — "Explore…", "Test…", "Understand…", "Investigate…".
+- A **Later** item reads as a standing intent or theme — "Be…", "Enable…", "Become…", "Treat … as …" — directional and outcome-shaped, deliberately not time-bound.
+
+Items at every horizon must still pass the five tests. A Later item is pitched at the level of direction rather than a specific deliverable, but it's still a real, well-formed item — not an excuse for vagueness.
 
 ## What the roadmap should communicate
 
@@ -62,6 +129,11 @@ The roadmap doesn't need every detail, but for each major item it should be poss
 - What delivery work is linked to it?
 - What dependencies or risks should people know about?
 - What's the latest decision?
+
+These don't all need to be spelled out in the item text — a good item should make the first three reasonably inferable and shouldn't contradict them. Grade the rest by how strictly to enforce them, so the check sharpens items without nagging:
+
+- **Load-bearing** (must be present or clearly inferable): why it matters, what led here, and what's being changed, learned, enabled, or de-risked.
+- **Light / optional** (flag absence gently, never as a quality failure): linked delivery work, dependencies and risks, and the latest decision. The status note in particular updates on the team's own review cadence — its absence at any single moment isn't a fault.
 
 ## Keeping the roadmap current
 
@@ -110,11 +182,13 @@ See `templates/decisions/roadmap-template.md` for the full structure.
 
 ## Relationship to the Knowledge Core
 
-The roadmap should reference Knowledge Core evidence, not restate it. An item's evidence basis should link to the specific belief or signal file, not paraphrase it — keeping the roadmap short enough to actually be read, and meaning an update to the underlying belief is felt in the roadmap automatically.
+The roadmap should reference Knowledge Core evidence, not restate it. An item's evidence basis should link to the specific belief or signal file, not paraphrase it — keeping the roadmap short enough to actually be read, and meaning an update to the underlying belief is felt in the roadmap automatically. The same principle applies to any linked planning detail underneath an item: link to the source, don't recreate it, or the copy will drift out of date the moment the source changes.
 
 ## See also
 
 - `templates/decisions/roadmap-template.md` — the blank roadmap scaffold
-- `prompts/decision/draft-roadmap.md` — prompt to draft or update a roadmap from current Knowledge Core evidence
+- `prompts/decision/draft-roadmap.md` — prompt to draft or update a whole roadmap from current Knowledge Core evidence
 - `prompts/decision/audit-roadmap-evidence.md` — prompt to check an existing roadmap for weak or stale evidence links
-- `.claude/skills/craft-roadmap-builder` — the skill that runs this methodology end to end
+- `prompts/decision/evaluate-roadmap-item.md` — prompt to evaluate, rewrite, or draft a single item without deciding its lane
+- `.claude/skills/craft-roadmap-builder` — drafts, updates, or audits a whole roadmap (places items in lanes, since it gathers both evidence and capacity across the full period)
+- `.claude/skills/craft-roadmap-item` — evaluates, rewrites, or drafts individual items (never places a lane — it only ever sees one item at a time, without the capacity/confidence context that placement needs)
