@@ -60,7 +60,7 @@ Audit mode doesn't need this step — it checks an existing roadmap's evidence l
 
 ## Step 6: Determine output location (Draft/Update only)
 
-Check for a **roadmap registry** first — the Knowledge Core repo's `AGENTS.md` may point to a config file (look for an entry like `Squad roadmap registry`) mapping a team name to an output target and a conventions doc, instead of a local file. If a registry resolves the team to a target:
+Check for a **roadmap registry** first — the Knowledge Core repo's `AGENTS.md` may point to one (look for an entry like `Squad roadmap registry`), mapping a team name to an output target and a conventions doc, instead of a local file. That entry may be a direct file path, or may point to another AGENTS.md-style file (e.g. under an org-specific context folder) that itself holds the registry entry — follow the chain rather than assuming the root file has it inline. If a registry resolves the team to a target:
 
 - Use that target directly — don't ask where to save.
 - Read whatever conventions doc the registry points to (page/file structure, any team-specific rules) before composing content. Don't assume the local-file template below applies as-is; the conventions doc is authoritative for that target.
