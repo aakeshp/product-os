@@ -60,7 +60,13 @@ Audit mode doesn't need this step — it checks an existing roadmap's evidence l
 
 ## Step 6: Determine output location (Draft/Update only)
 
-Read the Knowledge Core repo's `AGENTS.md` for a `Roadmaps directory` entry. If not set, ask the user where roadmaps live (suggest `Decisions/Roadmaps/` as a default) and tell them they can add a `Roadmaps directory` entry to `AGENTS.md` to skip this next time.
+Check for a **roadmap registry** first — the Knowledge Core repo's `AGENTS.md` may point to a config file (look for an entry like `Squad roadmap registry`) mapping a team name to an output target and a conventions doc, instead of a local file. If a registry resolves the team to a target:
+
+- Use that target directly — don't ask where to save.
+- Read whatever conventions doc the registry points to (page/file structure, any team-specific rules) before composing content. Don't assume the local-file template below applies as-is; the conventions doc is authoritative for that target.
+- If the target is a Notion page, proceed to the Notion-aware version of Step 9.
+
+If no registry entry resolves, fall back to the local-file flow: read the Knowledge Core repo's `AGENTS.md` for a `Roadmaps directory` entry. If not set, ask the user where roadmaps live (suggest `Decisions/Roadmaps/` as a default) and tell them they can add a `Roadmaps directory` entry to `AGENTS.md` to skip this next time.
 
 Filename: `[roadmaps_dir]/[period-slug]-roadmap.md` (e.g. `2026-q3-roadmap.md`) for a new draft, or the existing file path for an update.
 
@@ -78,9 +84,11 @@ If updating, diff the proposed content against the existing file. Carry forward 
 
 Only proceed to writing once the user approves.
 
-## Step 9: Write file (Draft/Update only)
+## Step 9: Write (Draft/Update only)
 
-Before writing, update the frontmatter: `last_updated` to today, `status` (draft until the user says otherwise), and `related` to the Knowledge Core evidence files actually used this run. Then write the approved content to the path determined in Step 6. Do not write if the content is unchanged from the existing file (Update mode).
+**Local file target:** Before writing, update the frontmatter: `last_updated` to today, `status` (draft until the user says otherwise), and `related` to the Knowledge Core evidence files actually used this run. Then write the approved content to the path determined in Step 6. Do not write if the content is unchanged from the existing file (Update mode).
+
+**Notion page target:** Re-fetch the page's current content immediately before writing — never reconstruct it from earlier in the conversation. Someone may have hand-edited it since you last looked, and a blind full-page rewrite silently reverts that. Prefer a targeted, section-scoped update over a full-page rewrite wherever the change is localized, so an edit to one section structurally can't clobber another. If a fresh fetch shows the page's style has diverged from what the conventions doc describes (shorter phrasing, a dropped clause), match what's actually there rather than reintroducing the doc's example verbatim — treat it as a signal about preference, not a one-off to fix. Skip the write if nothing has actually changed.
 
 ## Step 10: Report
 
